@@ -1,8 +1,12 @@
 """Main."""
-from .parsing import parsing_file
-from pathlib import Path
+from .parsing.read_text_file import parsing_file
 
 
 def run(file: str) -> int:
     """Run programme."""
-    maps = parsing_file(file) 
+    maps = parsing_file(file)
+    if not maps:
+        print("Error parsing")
+        return 0
+    
+    

@@ -1,4 +1,7 @@
 """Choice type file."""
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parents[1]
 
 
 def choice_file() -> str:
@@ -83,4 +86,4 @@ def choice_file() -> str:
         except ValueError as e:
             print(e)
             print("Just the numeric input has accepted.")
-    return path
+    return str(BASE_DIR) + path
